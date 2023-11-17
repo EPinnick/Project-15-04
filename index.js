@@ -178,7 +178,7 @@ app.post('/testLogin', async (req, res) => {
 });
 
 //movie search
-app.get("/search", async (req, res) => {
+app.get('/search', async (req, res) => {
     try{
         const movieName = req.query.movieName;
         //movie name is required
@@ -203,13 +203,15 @@ app.get("/search", async (req, res) => {
 
 /* authenticated routes */
 
-app.get("/home", async (req, res) => {
+/* Should this be just '/' to get to the home page route? */
+
+app.get('/home', async (req, res) => {
     res.render('pages/home');
 });
 
 
 
-app.get("/movies/:id", auth, async (req, res) => {
+app.get('/movies/:id', auth, async (req, res) => {
     //TODO get movie details from database
     //TODO render movie details page
     res.end("Welcome to the movie details page!");
